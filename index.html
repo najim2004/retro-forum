@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro : The Best Forum Hub!!</title>
+
+    <!-- Tailwind & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .mulish {
+            font-family: "Mulish", sans-serif;
+        }
+
+        .inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="inter">
+    <header class="container max-w-[1170px] mx-auto lg:mb-[100px] lg:mt-[55px] p-3 lg:p-0">
+        <!-- navbar section -->
+        <nav>
+            <div class="flex justify-between">
+
+                <a class="btn btn-ghost text-xl"><img src="./images/logo.png" alt=""></a>
+                <div class="flex gap-6">
+                    <div class="flex gap-6 items-center">
+                        <ul class="hidden lg:flex gap-3">
+                            <li class="tooltip" data-tip="Home"><button
+                                    class="btn border-[1px] border-[rgba(3,7,18,0.10)] bg-[rgba(18,19,45,0.03)] btn-circle"><img
+                                        class="size-6" src="./icons/Frame.svg" alt=""></button></li>
+                            <li class="tooltip" data-tip="Write"><button
+                                    class="btn border-[1px] border-[rgba(3,7,18,0.10)] bg-[rgba(18,19,45,0.03)] btn-circle"><img
+                                        class="size-6" src="./icons/pen.svg" alt=""></button></li>
+                            <li class="tooltip" data-tip="Add"><button
+                                    class="btn border-[1px] border-[rgba(3,7,18,0.10)] bg-[rgba(18,19,45,0.03)] btn-circle"><img
+                                        class="size-6" src="./icons/men.svg" alt=""></button></li>
+                            <li class="tooltip" data-tip="Report"><button
+                                    class="btn border-[1px] border-[rgba(3,7,18,0.10)] bg-[rgba(18,19,45,0.03)] btn-circle"><img
+                                        class="size-6" src="./icons/report.svg" alt=""></button></li>
+                        </ul>
+                        <button
+                            class="btn lg:w-[146px] lg:h-[56px] rounded-[50px] text-white bg-[#797DFC] mulish text-xl font-bold">Sign
+                            In</button>
+                    </div>
+
+                    <div class="lg:hidden justify-end">
+                        <div class="dropdown justify-end">
+                            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
+                            </div>
+                            <ul tabindex="0"
+                                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box right-0 w-52">
+                                <li><a>Home</a></li>
+                                <li><a>Write</a></li>
+                                <li><a>Add</a></li>
+                                <li><a>Report</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Banner section -->
+        <div class="mt-[50px]">
+            <div class="min-h-[550px] w-full rounded-[32px] bg-[#12132D]">
+                <div
+                    class="flex flex-col lg:flex-row gap-6 p-5 lg:p-0 lg:gap-[140px] justify-center items-center bg-[url('./images/bgbanner.png')] min-h-[550px] bg-bottom bg-no-repeat w-full">
+                    <div class="">
+                        <h3
+                            class="mulish leading-10 lg:leading-[80px] text-4xl text-center lg:text-start lg:text-[64px] font-black text-white">
+                            Welcome to the
+                            <br>
+                            <span
+                                class="bg-gradient-to-r from-[#797DFC] to-[rgba(121,125,252,0.4)] text-transparent bg-clip-text">ReTro</span>
+                            Forum
+                        </h3>
+                        <p
+                            class="mt-3 max-w-[455px] text-center lg:text-start mulish text-xl font-medium leading-9 text-[rgba(255,255,255,0.80)]">
+                            Share your favorite opinion and win and wp forum coffee mug!</p>
+
+                        <div
+                            class="h-[56px] mt-4 lg:mt-8 w-full lg:w-[400px] bg-white rounded-[50px] flex justify-center items-center">
+                            <input id="input-field" placeholder="Search here anything"
+                                class="p-[18px] flex-1 outline-none w-full rounded-[50px] h-full" type="text">
+                            <button onclick="searchPosts()"
+                                class="btn lg:w-[121px] mr-1 lg:h-[44px] rounded-[46px] border-none text-white bg-[#797DFC] mulish text-xl font-bold">Search</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-[36px] p-4 lg:p-12 lg:w-[371px] text-2xl font-medium mulish">
+                        <ul class="flex flex-col gap-6">
+                            <li class="flex justify-between">Registered Users <span>01</span></li>
+                            <li class="flex justify-between">Forum <span>01</span></li>
+                            <li class="flex justify-between">Topics <span>01</span></li>
+                            <li class="flex justify-between">Replies <span>01</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main class="container max-w-[1170px] mx-auto p-4 lg:p-0">
+        <!-- Let’s Discuss section -->
+        <section class="flex flex-col items-center">
+            <h3 class="mulish text-[40px] font-black">Let’s Discuss</h3>
+            <p class="max-w-[691px] text-center text-lg mt-6 text-[rgba(18,19,45,0.60)]">Let's Discuss: A vibrant community where diverse voices converge to explore, share, and exchange ideas seamlessly.</p>
+            <div class="flex lg:flex-row mt-12 flex-col-reverse gap-6 mb-12 lg:mb-[100px]">
+
+                <div class="">
+                    <div id="discuss-posts" class="hidden flex flex-col gap-6"></div>
+    
+                    <div id="spinner" class="lg:w-[772px] flex justify-center"><span class="loading loading-dots loading-lg"></span></div>
+                </div>
+                <div class="bg-[#F3F3F5] w-full lg:w-[365px] rounded-[24px] p-6 h-full">
+                    <div class="flex justify-between">
+                        <p class="mulish text-xl font-bold">Title</p>
+                        <p class="flex gap-2 items-center text-[rgba(18,19,45,0.60)]"><img src="./icons/chek.svg"
+                                alt="">Mark as read (<span id="read-count">0</span>)</p>
+                    </div>
+
+
+                    <div id="mark-read" class=""></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- forum section -->
+        <section
+            class="w-full min-h-[403px] p-5 lg:p-0 gap-5 lg:gap-0 lg:pl-[90px] bg-[#12132D] flex flex-col lg:flex-row rounded-[32px] justify-center items-center">
+            <div class="text-center lg:text-start">
+                <h3 class="text-[30px] lg:text-[40px] font-black mulish text-white">Join Our Forum</h3>
+                <p class="max-w-[652px] text-[rgba(255,255,255,0.80)] mulish mt-4 mb-8">Share your favorite opinion and
+                    win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the
+                    app. </p>
+
+                <button
+                    class="btn h-[56px] w-[232px] bg-[#797DFC] rounded-[50px] mulish text-xl font-bold text-white border-none">Registered
+                    Now</button>
+            </div>
+            <div class="flex h-full items-end">
+                <img class="lg:max-w-[388px] lg:max-h-[341px]" src="./images/joinforum.png" alt="">
+            </div>
+        </section>
+
+
+
+
+        <!-- Latest Posts section -->
+        <section class=" mt-12 lg:mt-[100px]">
+            <h3 class="text-center mulish text-[40px] font-black">Latest Posts</h3>
+            <p class="text-center mb-12 mx-auto max-w-[691px]  text-lg mt-6 text-[rgba(18,19,45,0.60)]">Dive into the freshest discussions and insights on our Latest Posts section, where trends, nostalgia, and contemporary topics collide seamlessly.</p>
+            
+            <div id="latest-container" class="hidden flex flex-col lg:flex-row gap-6"></div>
+            <div id="spinner1" class="w-full flex justify-center"><span class="loading loading-dots loading-lg"></span></div>
+        </section>
+    </main>
+    <footer class="h-[490px] mt-12 lg:mt-[100px] bg-gradient-to-b from-[rgba(18,19,45,0.05)] to-[rgba(18,19,45,0.00)]">
+        <section class="p-4 lg:p-0 max-w-[1170px] mulish mx-auto flex flex-col justify-center items-center h-full">
+            <h3 class="text-[36px] font-black">ReTro</h3>
+            <p class="rgba(18,19,45,0.70) mt-4 mb-8 max-w-[604px] text-center">Dive into the past with ReTro Forum, where nostalgia meets modern conversations. Join us in exploring timeless trends and memories together!</p>
+            <img src="./icons/Social.svg" alt="">
+            <hr class="bg-[rgba(48,50,94,0.10)] w-full my-12">
+            <p class="rgba(18,19,45,0.50) font-light">2017, All Rights Reserved.</p>
+        </section>
+    </footer>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
